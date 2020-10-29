@@ -23,35 +23,15 @@
                     age: 55,
                     fav: 'qssss'
                 }
+                // this.updateUser = this.updateUser.bind(this);
             }
-            
-            componentWillMount() {
-                
-            }
-            componentDidMount() {
-                
-            }
-            shouldComponentUpdate(nextProps, nextState) {
-                
-            }
-            //WARNING! To be deprecated in React v17. Use componentDidUpdate instead.
-            componentWillUpdate(nextProps, nextState) {
-                
-            }
-            componentDidUpdate(prevProps, prevState) {
-                
-            }
-            //WARNING! To be deprecated in React v17. Use componentDidUpdate instead.
-            componentWillUnmount() {
-                
-            }
-            componentWillReceiveProps(nextProps) {
-                
-            }
-            
-            
-            
-            updateUser = () => {
+
+
+
+
+
+            updateUser () {
+                console.log(this);
                 this.setState({
                     name: 'ttttt',
                     age: '44444',
@@ -68,7 +48,7 @@
                         <h1>Hello,{this.state.name}</h1>
                         <h1>Hello,{this.state.age}</h1>
                         <h1>Hello,{this.state.fav}</h1>
-                        <button onClick={this.updateUser}>更新数据</button>
+                        <button onClick={()=>this.updateUser()}>更新数据</button>
                     </div>
                 );
             }
