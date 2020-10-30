@@ -34,16 +34,11 @@
                 });
             }
             render() {
-                const isLogin = this.state.isLogin;
-                let button1;
-                if (isLogin) {
-                    button1 = <Login />
-                } else {
-                    button1 = <Logout/>
-                }
+                const {isLogin}=this.state;
+                
                 return <div>
                     <h1>Hello,{this.state.name}</h1>
-                    {button1}
+                    {isLogin?<Login/>:<Logout/>}
                     <button onClick={this.updateUser}>更新数据</button>
                 </div>
             }
