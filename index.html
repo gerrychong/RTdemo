@@ -13,48 +13,45 @@
 <body>
     <div id="app"></div>
     <script type="text/babel">
-
-
-        class Hello extends React.Component {
+        function Login() {
+            return <button>Login</button>
+        }
+        function Logout() {
+            return <button>Logout</button>
+        }
+        class App extends React.Component {
             constructor(props) {
-                super(props)
+                super(props);
                 this.state = {
-                    name: 'ppp',
-                    age: 55,
-                    fav: 'qssss'
+                    name: 'gerry',
+                    isLogin: false
                 }
-                // this.updateUser = this.updateUser.bind(this);
             }
-
-
-
-
-
-            updateUser () {
-                console.log(this);
+            updateUser=()=>{
                 this.setState({
-                    name: 'ttttt',
-                    age: '44444',
-                    fav: '5555'
+                    name:'zhuangjiangeng',
+                    isLogin:true
                 });
             }
-
-
-
-
             render() {
-                return (
-                    <div>
-                        <h1>Hello,{this.state.name}</h1>
-                        <h1>Hello,{this.state.age}</h1>
-                        <h1>Hello,{this.state.fav}</h1>
-                        <button onClick={()=>this.updateUser()}>更新数据</button>
-                    </div>
-                );
+                const isLogin = this.state.isLogin;
+                let button1;
+                if (isLogin) {
+                    button1 = <Login />
+                } else {
+                    button1 = <Logout/>
+                }
+                return <div>
+                    <h1>Hello,{this.state.name}</h1>
+                    {button1}
+                    <button onClick={this.updateUser}>更新数据</button>
+                </div>
             }
         }
+
+
         ReactDOM.render(
-            <Hello />, document.getElementById('app')
+            <App />, document.getElementById('app')
 
         )
 
